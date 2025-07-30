@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FileUpload from './components/FileUpload';
-import SummaryCard from  './components/summaryCard/SummaryCard';
+import SummaryCard from './components/SummaryCard';
 import { summarizeText, generateFlashcards } from './api';
 
 export default function App() {
