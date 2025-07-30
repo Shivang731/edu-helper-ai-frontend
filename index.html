@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Study Aid Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="brand">📚 Smart Study Aid</h1>
+      <nav class="nav">
+        <button onclick="showPage('dashboard')">Dashboard</button>
+        <button onclick="showPage('settings')">Settings</button>
+      </nav>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <button onclick="showPage('dashboard')">🏠 Dashboard</button>
+    <button onclick="showPage('generator')">✨ AI Generator</button>
+    <button onclick="showPage('flashcards')">🃏 Flashcards</button>
+    <button onclick="showPage('quiz')">❓ Quiz</button>
+    <button onclick="showPage('figma')">🎨 Figma Import</button>
+  </aside>
+
+  <main id="main-content">
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page active">
+      <h2>Welcome to Smart Study Aid</h2>
+      <p>Select a tool from the sidebar to begin.</p>
+    </section>
+
+    <!-- GENERATOR -->
+    <section id="generator" class="page">
+      <h2>AI Study Material Generator</h2>
+      <textarea id="input-text" placeholder="Paste your study content here..."></textarea>
+      <button onclick="generateGuide()">Generate Guide</button>
+      <pre id="output-guide"></pre>
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section id="flashcards" class="page">
+      <h2>Flashcards</h2>
+      <div id="flashcard-container"></div>
+      <button onclick="prevCard()">◀</button>
+      <button onclick="nextCard()">▶</button>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="page">
+      <h2>Quiz</h2>
+      <div id="quiz-container"></div>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </section>
+
+    <!-- FIGMA IMPORT -->
+    <section id="figma" class="page">
+      <h2>Figma Import (Simulated)</h2>
+      <input type="file" id="figma-file" accept=".fig" />
+      <button onclick="simulateImport()">Import Design</button>
+      <pre id="figma-code"></pre>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings" class="page">
+      <h2>Settings</h2>
+      <label>
+        Theme:
+        <select id="theme-select" onchange="changeTheme()">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
